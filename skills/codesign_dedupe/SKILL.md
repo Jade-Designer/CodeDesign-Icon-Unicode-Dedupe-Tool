@@ -2,7 +2,7 @@
 description: Identifies duplicate icon Unicode values across all project folders in Tencent Codesign using Playwright automation.
 ---
 
-# Codesign Icon Deduplication Skill
+# CodeDesign Icon Unicode Dedupe Tool
 
 This skill automates the process of finding duplicate icon Unicodes within a Codesign "资源库" (Resource Library). It uses Playwright to open a browser, allows you to log in, and then systematically navigates through every icon folder card, scraping names and Unicode values to find duplicates.
 

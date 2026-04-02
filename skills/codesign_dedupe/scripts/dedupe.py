@@ -6,7 +6,8 @@ def main():
     with sync_playwright() as p:
         import os
         
-        user_data_dir = "/Users/mawangxizi/Desktop/CodeDesign_Tool/user_data"
+        project_root = os.getcwd() # Make path portable for GitHub
+        user_data_dir = os.path.join(project_root, "user_data")
         os.makedirs(user_data_dir, exist_ok=True)
         
         print(f"Launching browser with persistent context at: {user_data_dir}")
@@ -19,7 +20,8 @@ def main():
 
         # ==========================================
         # 目标图标页面的完整网址
-        TARGET_URL = "https://codesign.qq.com/app/diver/icon?team_id=518308313307436" 
+        # 请替换为你项目真实的带资源库的 icon 链接
+        TARGET_URL = "https://codesign.qq.com/app/icon/YOUR_PROJECT_ID/detail" 
         # ==========================================
 
         print(f"Auto-navigating directly to: {TARGET_URL}")
@@ -197,7 +199,7 @@ def main():
                 
             # Emergency Debug Screenshot Condition for test folder
             if folder_name.lower().strip() == 'test' and icons_found == 8:
-                err_path = "/Users/mawangxizi/Desktop/CodeDesign_Tool/error_test_folder.png"
+                err_path = os.path.join(project_root, "error_test_folder.png")
                 page.screenshot(path=err_path)
                 print(f"  [DEBUG] Saving screenshot to '{err_path}' because test folder matched the 8-icon error pattern.")
 
@@ -220,13 +222,12 @@ def main():
                 if uni:
                     icon_data[uni].append({'name': name, 'folder': folder_name})
                 
-        # --- PHASE 3: Reporting ---
         print("\n=== PHASE 3: Deduplication Results ===\n")
         duplicates_found = False
-        report_path = "/Users/mawangxizi/Desktop/CodeDesign_Tool/duplicate_report.txt"
+        report_path = os.path.join(project_root, "duplicate_report.txt")
         
         with open(report_path, "w", encoding="utf-8") as f:
-            f.write("Codesign Icon Deduplication Report\n")
+            f.write("CodeDesign Icon Unicode Dedupe Tool Report\n")
             f.write("==================================\n\n")
             
             for uni, occurrences in icon_data.items():
