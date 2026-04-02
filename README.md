@@ -1,6 +1,6 @@
 # CodeDesign Icon Unicode Dedupe Tool
 
-这是一个基于 Playwright 和 Python 编写的自动化离线检查工具。它能够自动登录 [腾讯 Codesign](https://codesign.qq.com/) 资源库，逐个进入并扫描所有的图标文件，提取图标名称与对应的 Unicode 编码，最后在本地生成一份跨文件夹的「重复 Unicode 查重报告」。
+这是一个基于 Playwright 和 Python 编写的自动化检查工具。它能够自动登录 [腾讯 Codesign](https://codesign.qq.com/) 资源库，逐个进入并扫描所有的图标文件，提取图标名称与对应的 Unicode 编码，最后在本地生成一份跨文件夹的「重复 Unicode 查重报告」。
 
 ## ✨ 核心特性
 
