@@ -1,0 +1,6 @@
+user_data/
+venv/
+__pycache__/
+*.png
+duplicate_report.txt
+.DS_Store
