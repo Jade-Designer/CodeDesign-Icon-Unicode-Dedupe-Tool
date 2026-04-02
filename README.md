@@ -49,6 +49,6 @@ python skills/codesign_dedupe/scripts/dedupe.py
 
 网络环境：若公司内网有代理，请确保 Clash 或其他代理工具开启了 TUN 模式。
 
-👨‍💻 Maintainer: @mawangxizi (UX Designer)
+👨‍💻 Maintainer: @mawangxizi@gmail.com (UX Designer)
 
 📅 Last Updated: 2026-04-02
